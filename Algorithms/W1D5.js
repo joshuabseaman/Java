@@ -204,7 +204,7 @@ class SLL {
         // SLL HAS TWO NODES
         if (this.head.next === null) {
             console.log(`SLL DOESN'T HAVE 2 VALUES`)
-            return this;
+            return null;
         }
         // SLL IS NOT EMPTY
         let runner = this.head;

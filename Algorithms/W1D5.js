@@ -201,7 +201,7 @@ class SLL {
         if (this.isEmpty()) {
             return this;
         }
-        // SLL HAS ONE
+        // SLL HAS TWO NODES
         if (this.head.next === null) {
             console.log(`SLL DOESN'T HAVE 2 VALUES`)
             return this;
@@ -211,8 +211,7 @@ class SLL {
         while (runner.next.next.next !== null) {
             runner = runner.next;
         }
-        runner.next.next = null;
-        return this
+        return runner.next.value;
     }
 
     // retrieves the kth to last data in node.

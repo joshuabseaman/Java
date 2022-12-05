@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.card{
+	margin: auto;
+	margin-top: 25px;
+	padding: 10px;
+}
+
+.form-group{
+	margin-top: 10px;
+}

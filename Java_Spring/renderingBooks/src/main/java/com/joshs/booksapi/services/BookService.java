@@ -1,6 +1,7 @@
 package com.joshs.booksapi.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,9 @@ public class BookService {
     }
     //deletes a book
     public void deleteBook(Long id) {
-    	bookRepository.deleteById(id);
+    	Optional<Book> optionalBook = bookRepository.findById(id);
+    	if(optionalBook.isPresent()) {
+    		bookRepository.deleteById(id);
+    	}
     }
 }

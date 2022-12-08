@@ -40,7 +40,7 @@ public class MainController {
 			Model model) {
 		if(result.hasErrors()) {
 			List<Burger> burgers = burgerService.allBurgers();
-			model.addAttribute("burgers", burgers);
+			model.addAttribute("burger", burger);
 			return "index.jsp";
 		}
 		burgerService.addBurger(burger);

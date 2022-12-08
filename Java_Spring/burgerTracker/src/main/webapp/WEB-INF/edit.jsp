@@ -14,43 +14,23 @@
 <!-- For any Bootstrap that uses JS or jQuery-->
 <!-- <script src="/webjars/jquery/jquery.min.js"></script> -->
 <!-- <script src="/webjars/bootstrap/js/bootstrap.min.js"></script> -->
-<title>Insert title here</title>
+<title>Burger Tracker</title>
 </head>
 <body style="margin:10vw;">
 
-	<h1>Burger Tracker</h1>
-	<table class="table table-striped table-bordered">
-		<thead>
-			<tr>
-				<th>Burger Name</th>
-				<th>Restaurant Name</th>
-				<th>Rating (out of 5)</th>
-				<th>Action</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="burger" items="${burgers}">
-				<tr>
-					<td><c:out value="${burger.name}"/></td>
-					<td><c:out value="${burger.restaurant}"/></td>
-					<td><c:out value="${burger.rating}"/></td>
-					<td><a href="/edit/${burger.id}" class="text-warning">Edit</a></td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+	<h1>Edit Burger</h1><a href="/">Go back</a>
 	<br>
-	<h2>Add new burger</h2>
-	<form:form action="/addBurger" mode="post" modelAttribute="burger">
+	<form:form action="/edit/${burger.id}" method="post" modelAttribute="burger">
+		<input type="hidden" name="_method" value="put">
 		<div>
 			<form:label path="name">Burger Name: </form:label><br>
 			<form:errors path="name" class="text-danger"/>
-			<form:input path="name" style="width:250px;"/>
+			<form:input path="name" style="width:250px"/>
 		</div>
 		<div>
 			<form:label path="restaurant">Restaurant Name: </form:label><br>
 			<form:errors path="restaurant" class="text-danger"/>
-			<form:input path="restaurant" style="width:250px;"/>
+			<form:input path="restaurant" style="width:250px"/>
 		</div>
 		<div>
 			<form:label path="rating">Rating: </form:label><br>
@@ -60,9 +40,12 @@
 		<div>
 			<form:label path="notes">Notes: </form:label><br>
 			<form:errors path="notes" class="text-danger"/>
-			<form:textarea path="notes" rows="3" style="width:250px;"/>
+			<form:textarea path="notes" rows="3" style="width:250px"/>
 		</div>
-		<button>Submit</button>
+		<div>
+			<button>Submit</button>
+		</div>
 	</form:form>
+
 </body>
 </html>

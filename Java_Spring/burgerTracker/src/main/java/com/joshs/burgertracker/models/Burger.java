@@ -20,11 +20,11 @@ public class Burger {
 	private Long id;
 	
 	@NotEmpty
-	@Size(min=1, max=255, message="Burger name must not be empty.")
+	@Size(min=1, max=255)
 	private String name;
 	
 	@NotEmpty
-	@Size(min=1, max=255, message="Restaurant name must not be empty.")
+	@Size(min=1, max=255)
 	private String restaurant;
 	
 	@NotNull
@@ -33,7 +33,7 @@ public class Burger {
 	private int rating;
 	
 	@NotEmpty
-	@Size(min=1, max=255, message="Notes must not be empty.")
+	@Size(min=1, max=255)
 	private String notes;
 	
 	public Burger() {}
